@@ -1,4 +1,6 @@
 #/bin/bash
+export TZ=America/Los_Angeles
+
 G='\033[0;32m'
 echo -e "${G}Updating apt db.."
 apt-get update
