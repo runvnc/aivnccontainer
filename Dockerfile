@@ -2,7 +2,8 @@ ARG G='\033[0;32m'
 ARG N='\033[0;37m'
 
 FROM tensorflow/tensorflow:nightly-gpu-py3 
-ENV TZ America/Los_Angeles
+ENV TZ=America/Los_Angeles
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 RUN echo -e "${G}Updating apt db..${N}"
 RUN apt-get update
