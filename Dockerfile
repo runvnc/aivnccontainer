@@ -4,7 +4,7 @@ ARG N='\033[0;37m'
 FROM tensorflow/tensorflow:nightly-gpu-py3 
 ENV TZ=America/Los_Angeles
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-
+ENV DEBIAN_FRONTEND=noninteractive
 RUN echo -e "${G}Updating apt db..${N}"
 RUN apt-get update
 RUN echo -e "${G}Installing apt packages..${N}"
